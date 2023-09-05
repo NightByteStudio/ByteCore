@@ -1,2 +1,2 @@
 # ByteCore
-Cocoapods for Core components by NightByteStudio
+Cocoapods for Core components by NightByteStudio :)
