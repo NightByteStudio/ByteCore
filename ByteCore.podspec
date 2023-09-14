@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ByteCore'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Cocoapods for Core components by NightByteStudio.'
  
   s.homepage         = 'https://github.com/NightByteStudio/ByteCore.git'

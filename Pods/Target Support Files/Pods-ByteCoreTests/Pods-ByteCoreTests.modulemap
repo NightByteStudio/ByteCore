@@ -1,0 +1,6 @@
+framework module Pods_ByteCoreTests {
+  umbrella header "Pods-ByteCoreTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
