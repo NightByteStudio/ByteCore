@@ -8,6 +8,8 @@ target 'ByteCore' do
   # Pods for ByteCore
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Moya', '~> 15.0'
+  pod 'Moya/RxSwift', '~> 15.0'
 
   target 'ByteCoreTests' do
     inherit! :search_paths
