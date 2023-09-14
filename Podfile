@@ -10,6 +10,7 @@ target 'ByteCore' do
   pod 'RxCocoa'
   pod 'Moya', '~> 15.0'
   pod 'Moya/RxSwift', '~> 15.0'
+  pod 'RealmSwift', '~>10'
 
   target 'ByteCoreTests' do
     inherit! :search_paths
