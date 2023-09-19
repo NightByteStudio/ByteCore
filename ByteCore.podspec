@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ByteCore'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'Cocoapods for Core components by NightByteStudio.'
  
   s.homepage         = 'https://github.com/NightByteStudio/ByteCore.git'
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   
   s.swift_versions   = '4.0'
   s.ios.deployment_target = '15.0'
-  s.source_files = 'ByteCore/Extensions/*.swift'
+  s.source_files = 'ByteCore/Sources/**/*.{swift}
   
   s.dependency 'RxSwift'
   s.dependency 'RxCocoa'
