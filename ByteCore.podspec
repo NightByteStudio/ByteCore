@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   
   s.swift_versions   = '4.0'
   s.ios.deployment_target = '15.0'
-  s.source_files = 'ByteCore/Sources/**/*.{swift}
+  s.source_files = 'ByteCore/Sources/**/*.{swift}'
   
   s.dependency 'RxSwift'
   s.dependency 'RxCocoa'
