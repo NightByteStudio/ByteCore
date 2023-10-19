@@ -6,8 +6,6 @@
 //  Copyright © 2023 NightByteStudio. All rights reserved.
 //
 
-import Foundation
-
 public enum State<T> {
   case initiate
   case loading

@@ -6,10 +6,18 @@
 //  Copyright © 2023 NightByteStudio. All rights reserved.
 //
 
-import Foundation
 import Moya
 import RxSwift
 
+/**
+ * Generic reusable NetworkService object
+ * T is constraint for Moya's TargetType API
+ * U is constraint to Codable. It is the expected return object from the server and to be mapped accordingly
+ * The fetch method is open to be override just in case the subclass needs extra implementation
+ * The fetch method will call the API, returns the mapped object or return an API error if there are any occured
+ *
+ * NOTE: This object uses the Moya/RxSwift extensions
+ */
 open class NetworkService<T: TargetType> {
     
     private let provider: MoyaProvider<T>

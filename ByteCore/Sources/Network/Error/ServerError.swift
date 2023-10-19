@@ -6,8 +6,11 @@
 //  Copyright © 2023 NightByteStudio. All rights reserved.
 //
 
-import Foundation
-
+/**
+ * ServerError is type that will be initialized and returned to the view model when the NetworkService receives an error
+ *  responseCode should contains HTTP Response Code from the server
+ *  message should contains the error message returned by the server
+ */
 public struct ServerError: Error {
   var responseCode: Int?
   var message: String?

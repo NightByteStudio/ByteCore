@@ -6,7 +6,6 @@
 //  Copyright © 2023 NightByteStudio. All rights reserved.
 //
 
-import Foundation
 import Moya
 
 internal enum RMAPI: TargetType {
