@@ -6,7 +6,6 @@
 //  Copyright © 2023 NightByteStudio. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 import RxCocoa
 
@@ -108,7 +107,7 @@ internal final class RMViewController: BCViewController {
 }
 
 extension RMViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

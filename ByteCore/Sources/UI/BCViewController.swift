@@ -6,11 +6,15 @@
 //  Copyright © 2023 NightByteStudio. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
 
+/**
+ * Reusable View Controller class with provided methods for setting up MVVM binding, setting up views, and state management
+ * These methods are open for overriding
+ * Make sure to call the super's implementation when subclassing from BCViewController and overriding the methods
+ */
 open class BCViewController: UIViewController, BaseUI {
     
     private let disposeBag: DisposeBag = .init()
@@ -41,6 +45,10 @@ open class BCViewController: UIViewController, BaseUI {
     open func handleError(_ error: Error) { }
 }
 
+/**
+ * Default extension for BCViewController to bind a BehaviorRelay object from a view model
+ * This will make the view controller to automatically subscribe to the State changes and call the relevant methods accordingly
+ */
 public extension BCViewController {
     final func bindViewModelState<T>(_ state: BehaviorRelay<State<T>>) {
         /// Handle ViewModel loading state

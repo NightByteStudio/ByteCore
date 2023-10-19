@@ -6,14 +6,15 @@
 //  Copyright © 2023 NightByteStudio. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 
 internal final class RMRepository {
     
-    private let networkService: NetworkService<RMAPI> = .init()
+    private let networkService: NetworkService<RMAPI>
     
-    internal init() { }
+    internal init() {
+        self.networkService = .init()
+    }
     
     internal func getCharacters() -> Single<RMPaginatedResponse<RMCharacter>?> {
         return networkService.fetch(.getCharacters, responseObject: RMPaginatedResponse<RMCharacter>?.self)

@@ -6,11 +6,10 @@
 //  Copyright © 2023 NightByteStudio. All rights reserved.
 //
 
-import Foundation
 import RxCocoa
 import RxSwift
 
-internal final class RMViewModel {
+internal final class RMViewModel: BaseViewModel {
     let getCharactersState: BehaviorRelay<State<[RMCharacter]>> = .init(value: .initiate)
     let getCharacterDetailState: BehaviorRelay<State<RMCharacter>> = .init(value: .initiate)
     
@@ -47,5 +46,12 @@ internal final class RMViewModel {
             self?.getCharacterDetailState.accept(.failed(error))
         }
         .disposed(by: disposeBag)
+    }
+    
+    internal func getAllStates() -> [AnyState] {
+        return [
+            StateWrapper(getCharactersState),
+            StateWrapper(getCharacterDetailState)
+        ]
     }
 }
