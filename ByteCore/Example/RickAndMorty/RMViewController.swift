@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class RMViewController: BCViewController {
+internal final class RMViewController: BCViewController {
     
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)

@@ -9,17 +9,17 @@
 import Foundation
 import RxSwift
 
-class RMRepository {
+internal final class RMRepository {
     
     private let networkService: NetworkService<RMAPI> = .init()
     
-    init() { }
+    internal init() { }
     
-    func getCharacters() -> Single<RMPaginatedResponse<RMCharacter>?> {
+    internal func getCharacters() -> Single<RMPaginatedResponse<RMCharacter>?> {
         return networkService.fetch(.getCharacters, responseObject: RMPaginatedResponse<RMCharacter>?.self)
     }
     
-    func getCharacterDetail(id: Int) -> Single<RMCharacter?> {
+    internal func getCharacterDetail(id: Int) -> Single<RMCharacter?> {
         return networkService.fetch(.getCharacter(id), responseObject: RMCharacter?.self)
     }
 }

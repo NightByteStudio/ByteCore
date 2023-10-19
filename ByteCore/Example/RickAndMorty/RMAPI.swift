@@ -9,21 +9,21 @@
 import Foundation
 import Moya
 
-enum RMAPI: TargetType {
-    static let baseURLString: String = "https://rickandmortyapi.com/"
+internal enum RMAPI: TargetType {
+    internal static let baseURLString: String = "https://rickandmortyapi.com/"
     
     case getCharacters
     case getCharacter(Int)
     
-    var url: URL {
+    internal var url: URL {
         return URL(string: RMAPI.baseURLString + path)!
     }
     
-    var baseURL: URL {
+    internal var baseURL: URL {
         return URL(string: RMAPI.baseURLString)!
     }
     
-    var path: String {
+    internal var path: String {
         switch self {
             case .getCharacters:
                 return "api/character/"
@@ -32,21 +32,21 @@ enum RMAPI: TargetType {
         }
     }
     
-    var method: Moya.Method {
+    internal var method: Moya.Method {
         switch self {
             case .getCharacters, .getCharacter:
                 return .get
         }
     }
     
-    var task: Moya.Task {
+    internal var task: Moya.Task {
         switch self {
             case .getCharacters, .getCharacter:
                 return .requestPlain
         }
     }
     
-    var headers: [String : String]? {
+    internal var headers: [String : String]? {
         return nil
     }
 }

@@ -10,14 +10,14 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-final class RMViewModel {
+internal final class RMViewModel {
     let getCharactersState: BehaviorRelay<State<[RMCharacter]>> = .init(value: .initiate)
     let getCharacterDetailState: BehaviorRelay<State<RMCharacter>> = .init(value: .initiate)
     
     private let disposeBag: DisposeBag = .init()
     private let repository: RMRepository = .init()
     
-    func getCharacters() {
+    internal func getCharacters() {
         getCharactersState.accept(.loading)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
@@ -34,7 +34,7 @@ final class RMViewModel {
         })
     }
 
-    func getCharacterDetail(id: Int) {
+    internal func getCharacterDetail(id: Int) {
         getCharacterDetailState.accept(.loading)
         
         repository.getCharacterDetail(id: id).subscribe { [weak self] character in

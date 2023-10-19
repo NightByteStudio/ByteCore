@@ -8,11 +8,11 @@
 
 import Foundation
 
-public struct RMCharacter: Codable {
-    var id: Int
-    var name: String
+internal struct RMCharacter: Codable {
+    internal var id: Int
+    internal var name: String
     
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case id = "id"
         case name = "name"
     }
