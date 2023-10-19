@@ -19,18 +19,16 @@ internal final class RMViewModel: BaseViewModel {
     internal func getCharacters() {
         getCharactersState.accept(.loading)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-            self.repository.getCharacters().subscribe { [weak self] response in
-                guard let characters = response?.results else {
-                    self?.getCharactersState.accept(.empty)
-                    return
-                }
-                self?.getCharactersState.accept(.success(characters))
-            } onFailure: { [weak self] error in
-                self?.getCharactersState.accept(.failed(error))
+        repository.getCharacters().subscribe { [weak self] response in
+            guard let characters = response?.results else {
+                self?.getCharactersState.accept(.empty)
+                return
             }
-            .disposed(by: self.disposeBag)
-        })
+            self?.getCharactersState.accept(.success(characters))
+        } onFailure: { [weak self] error in
+            self?.getCharactersState.accept(.failed(error))
+        }
+        .disposed(by: disposeBag)
     }
 
     internal func getCharacterDetail(id: Int) {
