@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol BaseUI {
+public protocol BaseUI {
     func setupViews()
 }

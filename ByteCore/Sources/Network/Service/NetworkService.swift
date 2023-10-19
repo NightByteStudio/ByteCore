@@ -10,16 +10,16 @@ import Foundation
 import Moya
 import RxSwift
 
-final class NetworkService<T: TargetType> {
+open class NetworkService<T: TargetType> {
     
     private let provider: MoyaProvider<T>
     private let disposeBag: DisposeBag = .init()
     
-    init(provider: MoyaProvider<T> = MoyaProvider<T>()) {
+    public init(provider: MoyaProvider<T> = MoyaProvider<T>()) {
         self.provider = provider
     }
     
-    func fetch<U: Codable>(_ api: T, responseObject: U.Type) -> Single<U> {
+    open func fetch<U: Codable>(_ api: T, responseObject: U.Type) -> Single<U> {
         return provider.rx.request(api)
             .filterSuccessfulStatusCodes()
             .map(U.self)
@@ -28,9 +28,9 @@ final class NetworkService<T: TargetType> {
                     switch moyaError {
                         case .jsonMapping, .objectMapping:
                             throw APIError.invalidJSON
-                        case .statusCode(let response):
+                        case let .statusCode(response):
                             throw APIError.serverError(.init(responseCode: response.statusCode))
-                        case .underlying(let underlyingError, _):
+                        case let .underlying(underlyingError, _):
                             let error = underlyingError as NSError
                             if error.domain == NSURLErrorDomain && error.code == NSURLErrorNotConnectedToInternet {
                                 throw APIError.networkUnavailable

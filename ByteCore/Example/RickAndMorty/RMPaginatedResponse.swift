@@ -8,10 +8,10 @@
 
 import Foundation
 
-public struct RMPaginatedResponse<T: Codable>: Codable {
-    var results: [T]?
+internal struct RMPaginatedResponse<T: Codable>: Codable {
+    internal var results: [T]?
     
-    enum CodingKeys: String, CodingKey {
+    internal enum CodingKeys: String, CodingKey {
         case results = "results"
     }
 }

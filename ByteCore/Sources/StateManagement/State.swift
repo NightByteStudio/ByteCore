@@ -19,7 +19,7 @@ public enum State<T> {
 public extension State {
   var data: T? {
     switch self {
-      case .success(let data):
+      case let .success(data):
         return data
       default:
         return nil
@@ -46,7 +46,7 @@ public extension State {
   
   var isError: Error? {
     switch self {
-      case .failed(let error):
+      case let .failed(error):
         return error
       default:
         return nil
