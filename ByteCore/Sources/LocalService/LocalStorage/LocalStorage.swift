@@ -12,7 +12,7 @@ import RxSwift
 open class LocalStorage {
     private var realm: Realm?
     
-    func initRealm() -> Completable {
+    internal func initRealm() -> Completable {
         return Completable.create { completable in
             let config = RealmSwift.Realm.Configuration(schemaVersion: 1)
             Realm.Configuration.defaultConfiguration = config
@@ -28,7 +28,7 @@ open class LocalStorage {
         }
     }
     
-    func saveDataLocal<T: Object>(object: T) -> Completable {
+    internal func saveDataLocal<T: Object>(object: T) -> Completable {
         return Completable.create { [weak self] completable in
             if let realm = self?.realm {
                 do {
@@ -46,7 +46,7 @@ open class LocalStorage {
         }
     }
     
-    func getDataLocal<T: Object>(object: T.Type) -> Single<[T]> {
+    internal func getDataLocal<T: Object>(object: T.Type) -> Single<[T]> {
         return Single.create { [weak self] single in
             if let realm = self?.realm {
                 let results = realm.objects(object)
@@ -64,7 +64,7 @@ open class LocalStorage {
         }
     }
     
-    func deleteDataLocal() -> Completable {
+    internal func deleteDataLocal() -> Completable {
         return Completable.create { [weak self] completable in
             if let realm = self?.realm {
                 do {
