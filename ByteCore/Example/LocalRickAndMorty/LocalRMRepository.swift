@@ -9,7 +9,7 @@
 import RxSwift
 import RealmSwift
 
-class LocalStorageRepository {
+internal class LocalRMRepository {
     private let localStorage: LocalStorage
 
     internal init() {

@@ -10,8 +10,8 @@ import RxSwift
 import RxCocoa
 import RealmSwift
 
-class LocalStorageViewModel {
-    private let repository: LocalStorageRepository
+internal final class LocalRMViewModel {
+    private let repository: LocalRMRepository
     private let disposeBag = DisposeBag()
     
     let initRealmState: BehaviorRelay<State<Void>> = .init(value: .initiate)
@@ -19,7 +19,7 @@ class LocalStorageViewModel {
     let getDataLocalState: BehaviorRelay<State<[LocalRMCharacter]>> = .init(value: .initiate)
     let deleteDataLocalState: BehaviorRelay<State<Void>> = .init(value: .initiate)
 
-    init(repository: LocalStorageRepository) {
+    internal init() {
         self.repository = .init()
         initRealm()
     }
@@ -37,7 +37,7 @@ class LocalStorageViewModel {
         .disposed(by: disposeBag)
     }
 
-    func saveData(id: Int, name: String) {
+    internal func saveData(id: Int, name: String) {
         saveDataLocalState.accept(.loading)
         
         let objectLocal = LocalRMCharacter()
@@ -48,6 +48,7 @@ class LocalStorageViewModel {
             switch completable {
             case .completed:
                 self?.saveDataLocalState.accept(.success(()))
+                self?.getData()
             case .error(let error):
                 self?.saveDataLocalState.accept(.failed(error))
             }
@@ -55,7 +56,7 @@ class LocalStorageViewModel {
         .disposed(by: disposeBag)
     }
 
-    func getData() {
+    internal func getData() {
         getDataLocalState.accept(.loading)
         
         repository.getData().subscribe { [weak self] characters in
@@ -70,7 +71,7 @@ class LocalStorageViewModel {
         .disposed(by: disposeBag)
     }
 
-    func deleteData() {
+    internal func deleteData() {
         deleteDataLocalState.accept(.loading)
         
         repository.deleteData().subscribe { [weak self] completable in
