@@ -33,7 +33,7 @@ open class LocalStorage {
             if let realm = self?.realm {
                 do {
                     try realm.write {
-                        realm.add(object)
+                        realm.add(object, update: .modified)
                     }
                     completable(.completed)
                 } catch {
