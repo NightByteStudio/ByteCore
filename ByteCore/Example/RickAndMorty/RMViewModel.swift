@@ -14,13 +14,17 @@ internal final class RMViewModel: BaseViewModel {
     let getCharacterDetailState: BehaviorRelay<State<RMCharacter>> = .init(value: .initiate)
     
     private let disposeBag: DisposeBag = .init()
-    private let repository: RMRepository = .init()
+    private let repository: RMRepository
+    
+    internal init(repository: RMRepository = DefaultRMRepository()) {
+        self.repository = repository
+    }
     
     internal func getCharacters() {
         getCharactersState.accept(.loading)
         
         repository.getCharacters().subscribe { [weak self] response in
-            guard let characters = response?.results else {
+            guard let characters = response?.results, !characters.isEmpty else {
                 self?.getCharactersState.accept(.empty)
                 return
             }

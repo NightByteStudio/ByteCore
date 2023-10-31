@@ -24,6 +24,21 @@
 		85185A972AB9AA7A004EE634 /* ByteCore.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 85185A952AB9AA7A004EE634 /* ByteCore.podspec */; };
 		85185A982AB9AA7A004EE634 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 85185A962AB9AA7A004EE634 /* Podfile */; };
 		85185A9A2AB9AB63004EE634 /* RMRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85185A992AB9AB63004EE634 /* RMRepository.swift */; };
+		A9BD0BEB2AE1551D0039631B /* ServerErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0BEA2AE1551D0039631B /* ServerErrorTests.swift */; };
+		A9BD0BED2AE156800039631B /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0BEC2AE156800039631B /* NetworkServiceTests.swift */; };
+		A9BD0BF02AE156B70039631B /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0BEF2AE156B70039631B /* MockAPI.swift */; };
+		A9BD0BF22AE157260039631B /* MockMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0BF12AE157260039631B /* MockMoyaProvider.swift */; };
+		A9BD0BF42AE157460039631B /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0BF32AE157460039631B /* MockModel.swift */; };
+		A9BD0BF62AE157870039631B /* SimpleCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0BF52AE157870039631B /* SimpleCancellable.swift */; };
+		A9BD0BF92AE164820039631B /* StateManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0BF82AE164820039631B /* StateManagementTests.swift */; };
+		A9BD0BFC2AE166180039631B /* MockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0BFB2AE166180039631B /* MockViewModel.swift */; };
+		A9BD0BFE2AE167140039631B /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0BFD2AE167140039631B /* MockViewController.swift */; };
+		A9D1611C2AF0F6E00096E579 /* RMAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1611B2AF0F6E00096E579 /* RMAPITests.swift */; };
+		A9D1611F2AF0F7930096E579 /* Task+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D1611E2AF0F7930096E579 /* Task+Ext.swift */; };
+		A9D161222AF0F9ED0096E579 /* RMRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D161212AF0F9ED0096E579 /* RMRepositoryTests.swift */; };
+		A9D161242AF0FAD90096E579 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D161232AF0FAD90096E579 /* MockNetworkService.swift */; };
+		A9D161262AF120BE0096E579 /* RMViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D161252AF120BE0096E579 /* RMViewModelTests.swift */; };
+		A9D161282AF1210F0096E579 /* MockRMRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D161272AF1210F0096E579 /* MockRMRepository.swift */; };
 		CB90CA29AEA2D9E90A94129C /* Pods_ByteCore_ByteCoreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C65FBD0B515B71CB612861C /* Pods_ByteCore_ByteCoreUITests.framework */; };
 		EB9B701683A22533DBF5F7B1 /* Pods_ByteCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39EEE7D9FEAF430B1A84CF3 /* Pods_ByteCore.framework */; };
 		F39EA90A2AA9FE4A0054DC77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39EA9092AA9FE4A0054DC77 /* AppDelegate.swift */; };
@@ -76,6 +91,21 @@
 		85185A962AB9AA7A004EE634 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		85185A992AB9AB63004EE634 /* RMRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMRepository.swift; sourceTree = "<group>"; };
 		987F6DC5D47EB8BA2BE5E23C /* Pods-ByteCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ByteCoreTests.release.xcconfig"; path = "Target Support Files/Pods-ByteCoreTests/Pods-ByteCoreTests.release.xcconfig"; sourceTree = "<group>"; };
+		A9BD0BEA2AE1551D0039631B /* ServerErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerErrorTests.swift; sourceTree = "<group>"; };
+		A9BD0BEC2AE156800039631B /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		A9BD0BEF2AE156B70039631B /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
+		A9BD0BF12AE157260039631B /* MockMoyaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMoyaProvider.swift; sourceTree = "<group>"; };
+		A9BD0BF32AE157460039631B /* MockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModel.swift; sourceTree = "<group>"; };
+		A9BD0BF52AE157870039631B /* SimpleCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCancellable.swift; sourceTree = "<group>"; };
+		A9BD0BF82AE164820039631B /* StateManagementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManagementTests.swift; sourceTree = "<group>"; };
+		A9BD0BFB2AE166180039631B /* MockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
+		A9BD0BFD2AE167140039631B /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
+		A9D1611B2AF0F6E00096E579 /* RMAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMAPITests.swift; sourceTree = "<group>"; };
+		A9D1611E2AF0F7930096E579 /* Task+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Ext.swift"; sourceTree = "<group>"; };
+		A9D161212AF0F9ED0096E579 /* RMRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMRepositoryTests.swift; sourceTree = "<group>"; };
+		A9D161232AF0FAD90096E579 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		A9D161252AF120BE0096E579 /* RMViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMViewModelTests.swift; sourceTree = "<group>"; };
+		A9D161272AF1210F0096E579 /* MockRMRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRMRepository.swift; sourceTree = "<group>"; };
 		CDF9B0DD564554C73C62A2CC /* Pods_ByteCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ByteCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6A4CEA92D17D828E2E38CD8 /* Pods-ByteCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ByteCore.debug.xcconfig"; path = "Target Support Files/Pods-ByteCore/Pods-ByteCore.debug.xcconfig"; sourceTree = "<group>"; };
 		E39EEE7D9FEAF430B1A84CF3 /* Pods_ByteCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ByteCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,6 +271,74 @@
 			path = RickAndMorty;
 			sourceTree = "<group>";
 		};
+		A9BD0BE92AE154F00039631B /* NetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				A9BD0BEC2AE156800039631B /* NetworkServiceTests.swift */,
+				A9BD0BEA2AE1551D0039631B /* ServerErrorTests.swift */,
+				A9BD0BEE2AE1568B0039631B /* Helper */,
+			);
+			path = NetworkTests;
+			sourceTree = "<group>";
+		};
+		A9BD0BEE2AE1568B0039631B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A9BD0BEF2AE156B70039631B /* MockAPI.swift */,
+				A9BD0BF32AE157460039631B /* MockModel.swift */,
+				A9BD0BF12AE157260039631B /* MockMoyaProvider.swift */,
+				A9BD0BF52AE157870039631B /* SimpleCancellable.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A9BD0BF72AE1646C0039631B /* StateManagementTests */ = {
+			isa = PBXGroup;
+			children = (
+				A9BD0BF82AE164820039631B /* StateManagementTests.swift */,
+				A9BD0BFA2AE166100039631B /* Helper */,
+			);
+			path = StateManagementTests;
+			sourceTree = "<group>";
+		};
+		A9BD0BFA2AE166100039631B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A9BD0BFD2AE167140039631B /* MockViewController.swift */,
+				A9BD0BFB2AE166180039631B /* MockViewModel.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A9D1611A2AF0F6CB0096E579 /* ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				A9D161202AF0F9DF0096E579 /* RMTests */,
+			);
+			path = ExampleTests;
+			sourceTree = "<group>";
+		};
+		A9D1611D2AF0F7880096E579 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A9D1611E2AF0F7930096E579 /* Task+Ext.swift */,
+				A9D161232AF0FAD90096E579 /* MockNetworkService.swift */,
+				A9D161272AF1210F0096E579 /* MockRMRepository.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A9D161202AF0F9DF0096E579 /* RMTests */ = {
+			isa = PBXGroup;
+			children = (
+				A9D1611B2AF0F6E00096E579 /* RMAPITests.swift */,
+				A9D161212AF0F9ED0096E579 /* RMRepositoryTests.swift */,
+				A9D161252AF120BE0096E579 /* RMViewModelTests.swift */,
+				A9D1611D2AF0F7880096E579 /* Helper */,
+			);
+			path = RMTests;
+			sourceTree = "<group>";
+		};
 		F39EA8FD2AA9FE4A0054DC77 = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +380,9 @@
 			isa = PBXGroup;
 			children = (
 				F39EA9202AA9FE4B0054DC77 /* ByteCoreTests.swift */,
+				A9D1611A2AF0F6CB0096E579 /* ExampleTests */,
+				A9BD0BE92AE154F00039631B /* NetworkTests */,
+				A9BD0BF72AE1646C0039631B /* StateManagementTests */,
 			);
 			path = ByteCoreTests;
 			sourceTree = "<group>";
@@ -333,6 +434,7 @@
 				F39EA9182AA9FE4B0054DC77 /* Sources */,
 				F39EA9192AA9FE4B0054DC77 /* Frameworks */,
 				F39EA91A2AA9FE4B0054DC77 /* Resources */,
+				80EFA924D23C7F6F719AB8A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -455,6 +557,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ByteCore-ByteCoreUITests/Pods-ByteCore-ByteCoreUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		80EFA924D23C7F6F719AB8A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ByteCoreTests/Pods-ByteCoreTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ByteCoreTests/Pods-ByteCoreTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ByteCoreTests/Pods-ByteCoreTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B9B2067B8A3066576FAAE21D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -570,7 +689,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9D161262AF120BE0096E579 /* RMViewModelTests.swift in Sources */,
+				A9D1611F2AF0F7930096E579 /* Task+Ext.swift in Sources */,
+				A9BD0BFE2AE167140039631B /* MockViewController.swift in Sources */,
+				A9BD0BF22AE157260039631B /* MockMoyaProvider.swift in Sources */,
+				A9BD0BF02AE156B70039631B /* MockAPI.swift in Sources */,
+				A9BD0BF62AE157870039631B /* SimpleCancellable.swift in Sources */,
+				A9BD0BED2AE156800039631B /* NetworkServiceTests.swift in Sources */,
+				A9D161222AF0F9ED0096E579 /* RMRepositoryTests.swift in Sources */,
+				A9BD0BF42AE157460039631B /* MockModel.swift in Sources */,
+				A9D161242AF0FAD90096E579 /* MockNetworkService.swift in Sources */,
+				A9D161282AF1210F0096E579 /* MockRMRepository.swift in Sources */,
+				A9BD0BFC2AE166180039631B /* MockViewModel.swift in Sources */,
 				F39EA9212AA9FE4B0054DC77 /* ByteCoreTests.swift in Sources */,
+				A9D1611C2AF0F6E00096E579 /* RMAPITests.swift in Sources */,
+				A9BD0BF92AE164820039631B /* StateManagementTests.swift in Sources */,
+				A9BD0BEB2AE1551D0039631B /* ServerErrorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
