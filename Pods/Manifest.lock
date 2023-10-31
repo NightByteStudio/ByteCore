@@ -7,11 +7,14 @@ PODS:
   - Moya/RxSwift (15.0.0):
     - Moya/Core
     - RxSwift (~> 6.0)
+  - Nimble (12.3.0)
   - Realm (10.42.2):
     - Realm/Headers (= 10.42.2)
   - Realm/Headers (10.42.2)
   - RealmSwift (10.42.2):
     - Realm (= 10.42.2)
+  - RxBlocking (6.5.0):
+    - RxSwift (= 6.5.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -22,7 +25,9 @@ PODS:
 DEPENDENCIES:
   - Moya (~> 15.0)
   - Moya/RxSwift (~> 15.0)
+  - Nimble
   - RealmSwift (~> 10)
+  - RxBlocking
   - RxCocoa
   - RxSwift
 
@@ -30,8 +35,10 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Moya
+    - Nimble
     - Realm
     - RealmSwift
+    - RxBlocking
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -39,12 +46,14 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 0e92e751b3e9e66d7982db43919d01f313b8eb91
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  Nimble: f8a8219d16f176429b951e8f7e72df5c23ceddc0
   Realm: 2d2980fd7a562fa3d7ee21bb7d6cebac64393886
   RealmSwift: af08136c0322abccda4f34f482221c92d20dc88e
+  RxBlocking: 04b5fd28bb5ea49f7d64b80db8bbfe50d9cc1c7d
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
 
-PODFILE CHECKSUM: 3a77c95af367e6f3502d22962976b8e1f141b05b
+PODFILE CHECKSUM: 021b67c9167174a930ffaa5dcdfc06e530b719d3
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.13.0

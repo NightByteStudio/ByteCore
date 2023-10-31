@@ -43,6 +43,8 @@ open class BCViewController: UIViewController, BaseUI {
     open func handleSuccessWithData<T>(_ data: T) { }
     
     open func handleError(_ error: Error) { }
+    
+    open func handleEmpty() { }
 }
 
 /**
@@ -51,6 +53,20 @@ open class BCViewController: UIViewController, BaseUI {
  */
 public extension BCViewController {
     final func bindViewModelState<T>(_ state: BehaviorRelay<State<T>>) {
+        /// Handle ViewModel success state with the data
+        state.compactMap { $0.data }
+            .subscribe(onNext: { [weak self] data in
+                self?.handleSuccessWithData(data)
+            })
+            .disposed(by: disposeBag)
+        
+        /// Handle ViewModel error state with error
+        state.compactMap { $0.error }
+            .subscribe(onNext: { [weak self] error in
+                self?.handleError(error)
+            })
+            .disposed(by: disposeBag)
+        
         /// Handle ViewModel loading state
         state.map { $0.isLoading }
             .subscribe(onNext: { [weak self] isLoading in
@@ -67,17 +83,11 @@ public extension BCViewController {
             })
             .disposed(by: disposeBag)
         
-        /// Handle ViewModel success state with the data
-        state.compactMap { $0.data }
-            .subscribe(onNext: { [weak self] data in
-                self?.handleSuccessWithData(data)
-            })
-            .disposed(by: disposeBag)
-        
-        /// Handle ViewModel error state with error
-        state.compactMap { $0.isError }
-            .subscribe(onNext: { [weak self] error in
-                self?.handleError(error)
+        state.map { $0.isEmpty }
+            .subscribe(onNext: { [weak self] isEmpty in
+                if isEmpty {
+                    self?.handleEmpty()
+                }
             })
             .disposed(by: disposeBag)
     }

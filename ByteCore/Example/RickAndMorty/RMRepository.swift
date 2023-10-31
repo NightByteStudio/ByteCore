@@ -8,12 +8,21 @@
 
 import RxSwift
 
-internal final class RMRepository {
+internal protocol RMRepository {
+    var networkService: NetworkService<RMAPI> { get }
     
-    private let networkService: NetworkService<RMAPI>
+    init(networkService: NetworkService<RMAPI>)
     
-    internal init() {
-        self.networkService = .init()
+    func getCharacters() -> Single<RMPaginatedResponse<RMCharacter>?>
+    func getCharacterDetail(id: Int) -> Single<RMCharacter?>
+}
+
+internal final class DefaultRMRepository: RMRepository {
+    
+    internal var networkService: NetworkService<RMAPI>
+    
+    internal init(networkService: NetworkService<RMAPI> = .init()) {
+        self.networkService = networkService
     }
     
     internal func getCharacters() -> Single<RMPaginatedResponse<RMCharacter>?> {
