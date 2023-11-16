@@ -27,6 +27,9 @@ internal final class RMViewController: BCViewController {
     
     private let viewModel: RMViewModel = .init()
     private let disposeBag: DisposeBag = .init()
+    private let localViewModel: LocalRMViewModel = .init()
+    
+    private var charArray: [RMCharacter] = []
     
     override func setupViews() {
         super.setupViews()
@@ -56,6 +59,12 @@ internal final class RMViewController: BCViewController {
         /// One by one
         bindViewModelState(viewModel.getCharactersState)
         bindViewModelState(viewModel.getCharacterDetailState)
+        
+        /// Local State Binding
+        bindViewModelState(localViewModel.saveDataLocalState)
+        bindViewModelState(localViewModel.getDataLocalState)
+        bindViewModelState(localViewModel.deleteDataLocalState)
+        bindViewModelState(localViewModel.initRealmState)
         
         /// All at once
         /// viewModel.getAllStates().forEach { $0.bind(to: self) }
@@ -94,10 +103,17 @@ internal final class RMViewController: BCViewController {
         
         if let characters = data as? [RMCharacter] {
             print(characters.map { $0.name })
+            self.charArray = characters
         }
         
         if let character = data as? RMCharacter {
             print(character.name)
+            self.charArray.removeAll()
+            self.charArray.append(character)
+        }
+        
+        if let characters = data as? [LocalRMCharacter] {
+            print(characters.map { $0.name })
         }
     }
     
@@ -109,5 +125,8 @@ internal final class RMViewController: BCViewController {
 extension RMViewController: UITableViewDelegate {
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let usedChar = self.charArray[indexPath.row]
+        localViewModel.saveData(id: usedChar.id, name: usedChar.name)
     }
 }

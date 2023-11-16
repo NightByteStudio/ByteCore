@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0136F351F209CE18527BE8C9 /* Pods_ByteCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDF9B0DD564554C73C62A2CC /* Pods_ByteCoreTests.framework */; };
+		0280AEA52AE58E1800DEAEAC /* LocalRMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0280AEA42AE58E1800DEAEAC /* LocalRMViewModel.swift */; };
+		0280AEA72AE58E2E00DEAEAC /* LocalRMRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0280AEA62AE58E2E00DEAEAC /* LocalRMRepository.swift */; };
+		0280AEA92AE5915A00DEAEAC /* LocalRMCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0280AEA82AE5915A00DEAEAC /* LocalRMCharacter.swift */; };
+		02ADC2AE2AE239AC00F4F126 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ADC2AD2AE239AC00F4F126 /* LocalStorage.swift */; };
+		02ADC2B12AE23B3B00F4F126 /* LocalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ADC2B02AE23B3B00F4F126 /* LocalError.swift */; };
 		85185A712AB9A1B3004EE634 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85185A652AB9A1B2004EE634 /* BaseViewModel.swift */; };
 		85185A722AB9A1B3004EE634 /* BCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85185A672AB9A1B3004EE634 /* BCViewController.swift */; };
 		85185A732AB9A1B3004EE634 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85185A6A2AB9A1B3004EE634 /* NetworkService.swift */; };
@@ -70,6 +75,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0280AEA42AE58E1800DEAEAC /* LocalRMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRMViewModel.swift; sourceTree = "<group>"; };
+		0280AEA62AE58E2E00DEAEAC /* LocalRMRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRMRepository.swift; sourceTree = "<group>"; };
+		0280AEA82AE5915A00DEAEAC /* LocalRMCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRMCharacter.swift; sourceTree = "<group>"; };
+		02ADC2AD2AE239AC00F4F126 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		02ADC2B02AE23B3B00F4F126 /* LocalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalError.swift; sourceTree = "<group>"; };
 		092407AE86E32C220B8C1904 /* Pods-ByteCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ByteCore.release.xcconfig"; path = "Target Support Files/Pods-ByteCore/Pods-ByteCore.release.xcconfig"; sourceTree = "<group>"; };
 		2C65FBD0B515B71CB612861C /* Pods_ByteCore_ByteCoreUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ByteCore_ByteCoreUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8437AB44A0F83861F37148 /* Pods-ByteCore-ByteCoreUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ByteCore-ByteCoreUITests.debug.xcconfig"; path = "Target Support Files/Pods-ByteCore-ByteCoreUITests/Pods-ByteCore-ByteCoreUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +163,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0280AEA32AE58BC600DEAEAC /* LocalRickAndMorty */ = {
+			isa = PBXGroup;
+			children = (
+				0280AEA42AE58E1800DEAEAC /* LocalRMViewModel.swift */,
+				0280AEA62AE58E2E00DEAEAC /* LocalRMRepository.swift */,
+				0280AEA82AE5915A00DEAEAC /* LocalRMCharacter.swift */,
+			);
+			path = LocalRickAndMorty;
+			sourceTree = "<group>";
+		};
+		02ADC2AB2AE238EE00F4F126 /* LocalService */ = {
+			isa = PBXGroup;
+			children = (
+				02ADC2AC2AE2399A00F4F126 /* LocalStorage */,
+				02ADC2AF2AE23AC100F4F126 /* Error */,
+			);
+			path = LocalService;
+			sourceTree = "<group>";
+		};
+		02ADC2AC2AE2399A00F4F126 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				02ADC2AD2AE239AC00F4F126 /* LocalStorage.swift */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		02ADC2AF2AE23AC100F4F126 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				02ADC2B02AE23B3B00F4F126 /* LocalError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		3268F28F4030D07926BCE5E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +224,7 @@
 		85185A632AB9A18C004EE634 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				02ADC2AB2AE238EE00F4F126 /* LocalService */,
 				F39EA9392AA9FE550054DC77 /* Extensions */,
 				85185A682AB9A1B3004EE634 /* Network */,
 				85185A642AB9A1B2004EE634 /* Protocols */,
@@ -245,6 +291,7 @@
 			children = (
 				F39EA90D2AA9FE4A0054DC77 /* ViewController.swift */,
 				85185A8C2AB9A4CF004EE634 /* RickAndMorty */,
+				0280AEA32AE58BC600DEAEAC /* LocalRickAndMorty */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -664,15 +711,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0280AEA72AE58E2E00DEAEAC /* LocalRMRepository.swift in Sources */,
 				F39EA93D2AA9FEB00054DC77 /* Int+Extension.swift in Sources */,
 				85185A852AB9A2EA004EE634 /* BaseUI.swift in Sources */,
 				85185A722AB9A1B3004EE634 /* BCViewController.swift in Sources */,
+				02ADC2AE2AE239AC00F4F126 /* LocalStorage.swift in Sources */,
 				85185A772AB9A1B3004EE634 /* AnyState+Wrapper.swift in Sources */,
 				85185A712AB9A1B3004EE634 /* BaseViewModel.swift in Sources */,
 				85185A762AB9A1B3004EE634 /* State.swift in Sources */,
 				F39EA90E2AA9FE4A0054DC77 /* ViewController.swift in Sources */,
+				0280AEA52AE58E1800DEAEAC /* LocalRMViewModel.swift in Sources */,
+				02ADC2B12AE23B3B00F4F126 /* LocalError.swift in Sources */,
 				85185A922AB9A52F004EE634 /* RMViewModel.swift in Sources */,
 				F39EA90A2AA9FE4A0054DC77 /* AppDelegate.swift in Sources */,
+				0280AEA92AE5915A00DEAEAC /* LocalRMCharacter.swift in Sources */,
 				85185A742AB9A1B3004EE634 /* ServerError.swift in Sources */,
 				85185A942AB9A734004EE634 /* RMPaginatedResponse.swift in Sources */,
 				85185A902AB9A51E004EE634 /* RMCharacter.swift in Sources */,
