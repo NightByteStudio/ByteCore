@@ -6,19 +6,27 @@
 //  Copyright © 2023 NightByteStudio. All rights reserved.
 //
 
+/**
+ * State: An enum case that handles the main state of API calls
+ * - initiate: a placeholder value for initiating a BehaviorRelay value
+ * - loading: loading state
+ * - success: a success state that have one parameter SuccessState
+ * - empty: empty state that is triggered when the expected data turns out to be empty
+ * - failed: a failed state that have one error parameter
+ */
 public enum State<T> {
     case initiate
     case loading
-    case success(T)
+    case success(SuccessState<T>)
     case empty
     case failed(Error)
 }
 
 public extension State {
-    var data: T? {
+    var success: SuccessState<T>? {
         switch self {
-            case let .success(data):
-                return data
+            case let .success(state):
+                return state
             default:
                 return nil
         }
@@ -30,15 +38,6 @@ public extension State {
                 return error
             default:
                 return nil
-        }
-    }
-    
-    var isSuccess: Bool {
-        switch self {
-            case .success:
-                return true
-            default:
-                return false
         }
     }
     

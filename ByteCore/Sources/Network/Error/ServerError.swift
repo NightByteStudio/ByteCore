@@ -12,6 +12,6 @@
  *  message should contains the error message returned by the server
  */
 public struct ServerError: Error {
-  var responseCode: Int?
-  var message: String?
+    public var responseCode: Int?
+    public var message: String?
 }
