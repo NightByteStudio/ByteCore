@@ -28,7 +28,7 @@ internal final class RMViewModel: BaseViewModel {
                 self?.getCharactersState.accept(.empty)
                 return
             }
-            self?.getCharactersState.accept(.success(characters))
+            self?.getCharactersState.accept(.success(.withData(characters)))
         } onFailure: { [weak self] error in
             self?.getCharactersState.accept(.failed(error))
         }
@@ -43,7 +43,7 @@ internal final class RMViewModel: BaseViewModel {
                 self?.getCharacterDetailState.accept(.empty)
                 return
             }
-            self?.getCharacterDetailState.accept(.success(character))
+            self?.getCharacterDetailState.accept(.success(.withData(character)))
         } onFailure: { [weak self] error in
             self?.getCharacterDetailState.accept(.failed(error))
         }

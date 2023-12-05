@@ -28,7 +28,7 @@ internal final class RMViewController: BCViewController {
     private let viewModel: RMViewModel = .init()
     private let disposeBag: DisposeBag = .init()
     
-    override func setupViews() {
+    internal override func setupViews() {
         super.setupViews()
         title = "RM"
         
@@ -50,7 +50,7 @@ internal final class RMViewController: BCViewController {
         tableView.delegate = self
     }
     
-    override func setupBinding() {
+    internal override func setupBinding() {
         super.setupBinding()
         
         /// One by one
@@ -61,47 +61,46 @@ internal final class RMViewController: BCViewController {
         /// viewModel.getAllStates().forEach { $0.bind(to: self) }
         
         viewModel.getCharactersState
-            .compactMap { $0.data }
+            .compactMap { $0.success?.data }
             .bind(to: tableView.rx.items(cellIdentifier: "cell")) { indexPath, model, cell in
                 cell.textLabel?.text = model.name
             }
             .disposed(by: disposeBag)
     }
     
-    override func fetchData() {
+    internal override func fetchData() {
         super.fetchData()
         viewModel.getCharacters()
     }
     
-    override func startLoading() {
+    internal override func startLoading() {
         super.startLoading()
         self.tableView.isHidden = true
         self.activityIndicatorView.startAnimating()
     }
     
-    override func stopLoading() {
+    internal override func stopLoading() {
         super.stopLoading()
         self.tableView.isHidden = false
         self.activityIndicatorView.stopAnimating()
     }
     
-    override func handleSuccess() {
-        super.handleSuccess()
+    override func handleSuccess<T>(_ successState: SuccessState<T>) {
+        switch successState {
+            case let .withData(data):
+                if let characters = data as? [RMCharacter] {
+                    print(characters.map { $0.name })
+                }
+                
+                if let character = data as? RMCharacter {
+                    print(character.name)
+                }
+            case .noData:
+                break
+        }
     }
     
-    override func handleSuccessWithData<T>(_ data: T) {
-        super.handleSuccessWithData(data)
-        
-        if let characters = data as? [RMCharacter] {
-            print(characters.map { $0.name })
-        }
-        
-        if let character = data as? RMCharacter {
-            print(character.name)
-        }
-    }
-    
-    override func handleError(_ error: Error) {
+    internal override func handleError(_ error: Error) {
         super.handleError(error)
     }
 }

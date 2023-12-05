@@ -26,24 +26,31 @@ open class BCViewController: UIViewController, BaseUI {
         fetchData()
     }
     
+    /// Overridable method to execute view models binding to the view controller
     open func setupBinding() { }
     
+    /// Overridable method to setup the view hierarchy (e.g. setting up any constraints, adding child views, etc)
     open func setupViews() {
         view.backgroundColor = .systemGroupedBackground
     }
     
+    /// Overridable method to call APIs, this method can then be recalled when there are any refresh logic
     open func fetchData() { }
     
+    /// Overridable method that automatically called when the binded view model state enters loading. To show loading state of the view
     open func startLoading() { }
     
+    /// Overridable method that automatically called when the binded view model state exits loading. To hide the loading state of the view
     open func stopLoading() { }
     
-    open func handleSuccess() { }
+    /// Overridable method that automatically called when the binded view model state returns success. Passed in the data to the view controller
+    /// successState: SuccessState<T> is a success state enum that can contains data or no data
+    open func handleSuccess<T>(_ successState: SuccessState<T>) { }
     
-    open func handleSuccessWithData<T>(_ data: T) { }
-    
+    /// Overridable method that automatically called when the binded view model state returns failure. Passed in the error to the view controller
     open func handleError(_ error: Error) { }
     
+    /// Overridable method that automatically called when the binded view model state returns empty.
     open func handleEmpty() { }
 }
 
@@ -53,13 +60,6 @@ open class BCViewController: UIViewController, BaseUI {
  */
 public extension BCViewController {
     final func bindViewModelState<T>(_ state: BehaviorRelay<State<T>>) {
-        /// Handle ViewModel success state with the data
-        state.compactMap { $0.data }
-            .subscribe(onNext: { [weak self] data in
-                self?.handleSuccessWithData(data)
-            })
-            .disposed(by: disposeBag)
-        
         /// Handle ViewModel error state with error
         state.compactMap { $0.error }
             .subscribe(onNext: { [weak self] error in
@@ -75,11 +75,9 @@ public extension BCViewController {
             .disposed(by: disposeBag)
         
         /// Handle ViewModel success state without data
-        state.map { $0.isSuccess }
+        state.compactMap { $0.success }
             .subscribe(onNext: { [weak self] success in
-                if success {
-                    self?.handleSuccess()
-                }
+                self?.handleSuccess(success)
             })
             .disposed(by: disposeBag)
         
