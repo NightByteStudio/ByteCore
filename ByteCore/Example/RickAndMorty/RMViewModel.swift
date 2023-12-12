@@ -10,8 +10,8 @@ import RxCocoa
 import RxSwift
 
 internal final class RMViewModel: BaseViewModel {
-    let getCharactersState: BehaviorRelay<State<[RMCharacter]>> = .init(value: .initiate)
-    let getCharacterDetailState: BehaviorRelay<State<RMCharacter>> = .init(value: .initiate)
+    internal let getCharactersState: BehaviorRelay<State<[RMCharacter]>> = .init(value: .initiate)
+    internal let getCharacterDetailState: BehaviorRelay<State<RMCharacter>> = .init(value: .initiate)
     
     private let disposeBag: DisposeBag = .init()
     private let repository: RMRepository

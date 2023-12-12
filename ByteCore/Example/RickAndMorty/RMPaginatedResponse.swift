@@ -15,7 +15,7 @@
 internal struct RMPaginatedResponse<T: Codable>: Codable {
     internal var results: [T]?
     
-    internal enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case results
     }
 }
