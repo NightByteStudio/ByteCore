@@ -28,7 +28,7 @@ internal final class RMViewController: BCViewController {
     private let viewModel: RMViewModel = .init()
     private let disposeBag: DisposeBag = .init()
     
-    internal override func setupViews() {
+    override internal func setupViews() {
         super.setupViews()
         title = "RM"
         
@@ -50,7 +50,7 @@ internal final class RMViewController: BCViewController {
         tableView.delegate = self
     }
     
-    internal override func setupBinding() {
+    override internal func setupBinding() {
         super.setupBinding()
         
         /// One by one
@@ -68,24 +68,24 @@ internal final class RMViewController: BCViewController {
             .disposed(by: disposeBag)
     }
     
-    internal override func fetchData() {
+    override internal func fetchData() {
         super.fetchData()
         viewModel.getCharacters()
     }
     
-    internal override func startLoading() {
+    override internal func startLoading() {
         super.startLoading()
         self.tableView.isHidden = true
         self.activityIndicatorView.startAnimating()
     }
     
-    internal override func stopLoading() {
+    override internal func stopLoading() {
         super.stopLoading()
         self.tableView.isHidden = false
         self.activityIndicatorView.stopAnimating()
     }
     
-    override func handleSuccess<T>(_ successState: SuccessState<T>) {
+    override internal func handleSuccess<T>(_ successState: SuccessState<T>) {
         switch successState {
             case let .withData(data):
                 if let characters = data as? [RMCharacter] {
@@ -100,7 +100,7 @@ internal final class RMViewController: BCViewController {
         }
     }
     
-    internal override func handleError(_ error: Error) {
+    override internal func handleError(_ error: Error) {
         super.handleError(error)
     }
 }
